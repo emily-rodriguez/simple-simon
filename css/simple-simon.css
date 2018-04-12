@@ -33,26 +33,26 @@ h1 {
     justify-content: flex-end;
 }
 
-#red {
-    background-color: red;
+#green {
+    background-color: green;
     opacity: 0.5;
     border-top-left-radius: 100%;
 }
 
-#blue {
-    background-color: blue;
+#red {
+    background-color: red;
     opacity: 0.5;
     border-top-right-radius: 100%;
 }
 
-#green {
-    background-color: green;
+#yellow {
+    background-color: yellow;
     opacity: 0.5;
     border-bottom-left-radius: 100%;
 }
 
-#yellow {
-    background-color: yellow;
+#blue {
+    background-color: blue;
     opacity: 0.5;
     border-bottom-right-radius: 100%
 }
