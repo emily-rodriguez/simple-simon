@@ -19,17 +19,17 @@ h1 {
     padding: 0;
 }
 
-.red-piece {
+.green-piece {
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-.blue-piece {
+.red-piece {
     justify-content: flex-start;
     align-items: flex-end;
 }
 
-.green-piece {
+.yellow-piece {
     justify-content: flex-end;
 }
 

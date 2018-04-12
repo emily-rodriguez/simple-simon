@@ -39,7 +39,9 @@ function gamePlay() {
 
 $('#start-game').click(function(event){
     gamePlay();
-    // $(this).css("display", "none");
+    $(this).css("display", "none");
+    var i = 0;
+    console.log()
 
 });
 
