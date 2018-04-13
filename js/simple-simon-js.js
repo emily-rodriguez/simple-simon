@@ -8,7 +8,22 @@ var redButton = $('#red');
 var yelButton = $('#yellow');
 var blueButton = $('#blue');
 
+var clickCounter = 0;
 
+$(document).click(function(){
+    clickCounter++;
+    console.log("click counter: " + clickCounter);
+    if (clickCounter == gameSequence.length) {
+        matchArrays(gameSequence, playerSequence)
+    }
+});
+
+$('#start-game').click(function(event){
+    gamePlay();
+    $(this).css("display", "none");
+    clickCounter =- 1;
+    console.log(clickCounter);
+});
 
 function getRandomColor() {
     var randomNumber = Math.floor((Math.random() * 4) + 1);
@@ -23,32 +38,35 @@ function animateColor(object) {
 
 function gamePlay() {
     var colorCode = getRandomColor();
+    gameSequence.push(colorCode);
     console.log(colorCode);
-    switch(colorCode) {
-        case 1:
-            animateColor(greenButton);
-            gameSequence.push(colorCode);
-            break;
-        case 2:
-            animateColor(redButton);
-            gameSequence.push(colorCode);
-            break;
-        case 3:
-            animateColor(yelButton);
-            gameSequence.push(colorCode);
-            break;
-        case 4:
-            animateColor(blueButton);
-            gameSequence.push(colorCode);
-            break;
-    }
+    var i = 0;
+    var max = gameSequence.length;
+    var interval = 800;
+
+    var intervalId = setInterval(function(){
+        if (i >= max) {
+            clearInterval(intervalId);
+            return;
+        }
+        switch(gameSequence[i]) {
+            case 1:
+                animateColor(greenButton);
+                break;
+            case 2:
+                animateColor(redButton);
+                break;
+            case 3:
+                animateColor(yelButton);
+                break;
+            case 4:
+                animateColor(blueButton);
+                break;
+        }
+        i++;
+    }, interval);
     console.log("Here is the updated game sequence: " + gameSequence);
 }
-
-$('#start-game').click(function(event){
-    gamePlay();
-    $(this).css("display", "none")
-});
 
 var playerSequence = [];
 
@@ -58,23 +76,26 @@ function matchArrays(array1, array2) {
     }
     for (var i=0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
-            alert("Sorry! You lose!")
-        } else {
-            playerSequence = [];
-            setTimeout(function () {
-                gamePlay()
-            }, 800);
+            $('.container').html('<div id="error-message" class="mx-auto"><h1 class="text-center">Sorry! You lose!</h1><div class="text-center"><button type="button" class="btn btn-warning" id="play-again">Play Again?</button></div></div>');
         }
     }
+    playerSequence = [];
+    clickCounter = 0;
+    setTimeout(function () {
+        gamePlay()
+    }, 800);
 }
 
+$('#play-again').click(function(){
+    console.log("hello");
+});
 
 
 $(greenButton).click(function () {
-        console.log("you clicked the green button");
-        animateColor(greenButton);
-        playerSequence.push(1);
-        console.log(playerSequence);
+    console.log("you clicked the green button");
+    animateColor(greenButton);
+    playerSequence.push(1);
+    console.log(playerSequence);
 });
 
 $(redButton).click(function () {
@@ -97,6 +118,14 @@ $(blueButton).click(function () {
     playerSequence.push(4);
     console.log(playerSequence);
 });
+
+
+
+
+
+
+
+
 
 
 
