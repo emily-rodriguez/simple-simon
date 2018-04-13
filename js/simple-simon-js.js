@@ -9,6 +9,7 @@ var yelButton = $('#yellow');
 var blueButton = $('#blue');
 
 var clickCounter = 0;
+var roundCounter = 0;
 
 $(document).click(function(){
     clickCounter++;
@@ -22,6 +23,8 @@ $('#start-game').click(function(event){
     gamePlay();
     $(this).css("display", "none");
     clickCounter =- 1;
+    $('.text-center').html("<h3>score: 0</h3>")
+
 });
 
 function getRandomColor() {
@@ -65,6 +68,7 @@ function gamePlay() {
         }
         i++;
     }, interval);
+    roundCounter++
 }
 
 var playerSequence = [];
@@ -76,7 +80,9 @@ function matchArrays(array1, array2) {
     }
     for (var i=0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
-         $('#center').html("<h1>Wrong</h1>");
+            clickCounter = 0;
+             $('#center').html("<h3 id='gameOver'>Wrong</h3>" +
+             "<div><button type='button' id='new-game' class='btn btn-primary'>new game?</button></div>");
         } else
         if ((i == (array1.length -1)) && (array1[i] === array2[i])) {
             playerSequence = [];
@@ -84,6 +90,7 @@ function matchArrays(array1, array2) {
             setTimeout(function () {
                 gamePlay()
             }, 800);
+            $('.text-center').html("<h3>score: " + roundCounter + "</h3>")
         }
     }
 }
@@ -119,6 +126,10 @@ $(blueButton).click(function () {
     animateColor(blueButton);
     playerSequence.push(4);
     console.log("player sequence: " + playerSequence);
+});
+
+$('#new-game').click(function (event) {
+    alert("starting new game")
 });
 
 

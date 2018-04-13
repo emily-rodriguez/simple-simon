@@ -1,12 +1,13 @@
 body {
-    font-size: 0px;
-    background-color: rgb(224, 224, 224);
+    background-image: url("../img/hypnotize/hypnotize.png");
+    font-family: 'Gugi', cursive;
 }
 button {
     cursor: pointer;
     border-style: none;
     outline: none;
 }
+
 #container {
     margin: auto;
     width: 500px;
@@ -72,84 +73,23 @@ button {
     border-radius: 50%;
     text-align: center;
 }
-.btn-wrapper {
-    display: inline-block;
-    margin: 6px;
-    vertical-align: middle;
-}
-.btn-wrapper > * {
-    margin: 3px;
-}
-#throne-start, #throne-strict, #throne-on, #throne-light{
-    box-shadow: 0px 0px 3px black;
-    display: inline-block;
-    background-color: rgb(48, 48, 48);
-    position: relative;
-}
-#throne-start, #throne-strict{
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-}
-#throne-on {
-    width: 46px;
-    height: 22px;
-    border-radius: 2px;
-    display:inline-block;
-    vertical-align: middle;
-}
-#throne-light {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-#btn-start, #btn-strict, #btn-on, #light {
-    position: absolute;
-}
-#light {
-    background-color: black;
-    width: 6px;
-    height: 6px;
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-}
-#btn-start, #btn-strict {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    left: 4px;
-    top: 4px;
-}
-#btn-start {
-    background-color: red;
-}
-#btn-strict {
-    background-color: yellow;
-}
-#btn-on {
-    width: 40px;
-    height: 16px;
-    left: 3px;
-    top: 3px;
-    background-color: rgb(48, 48, 48);
-    padding: 0px;
-}
-#btn-on > * {
-    display: inline-block;
-    width: 20px;
-    height: 16px;
-    border-radius: 2px;
-}
-#btn-on>div:first-child {
-    background-color: black;
-}
-h1 {
+#game-label {
     font-size: 28px;
-    margin: 20px 0px 8px 0px;
+    margin: 40px 0px 8px 0px;
 }
+
+#header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
 h2 {
     font-size: 16px;
     display: inline-block;
     vertical-align: middle;
+}
+
+#gameOver {
+    margin-top: 40px;
 }
