@@ -81,8 +81,7 @@ function matchArrays(array1, array2) {
     for (var i=0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
             clickCounter = 0;
-             $('#center').html("<h3 id='gameOver'>Wrong</h3>" +
-             "<div><button type='button' id='new-game' class='btn btn-primary'>new game?</button></div>");
+             $('#center').html("<h3 id='gameOver'>Wrong</h3>");
         } else
         if ((i == (array1.length -1)) && (array1[i] === array2[i])) {
             playerSequence = [];
@@ -128,9 +127,6 @@ $(blueButton).click(function () {
     console.log("player sequence: " + playerSequence);
 });
 
-$('#new-game').click(function (event) {
-    alert("starting new game")
-});
 
 
 
