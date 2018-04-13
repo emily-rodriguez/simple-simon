@@ -22,7 +22,6 @@ $('#start-game').click(function(event){
     gamePlay();
     $(this).css("display", "none");
     clickCounter =- 1;
-    console.log(clickCounter);
 });
 
 function getRandomColor() {
@@ -39,7 +38,8 @@ function animateColor(object) {
 function gamePlay() {
     var colorCode = getRandomColor();
     gameSequence.push(colorCode);
-    console.log(colorCode);
+    console.log("Game sequence: " + gameSequence);
+
     var i = 0;
     var max = gameSequence.length;
     var interval = 800;
@@ -65,25 +65,27 @@ function gamePlay() {
         }
         i++;
     }, interval);
-    console.log("Here is the updated game sequence: " + gameSequence);
 }
 
 var playerSequence = [];
 
 function matchArrays(array1, array2) {
+    console.log("running match Arrays function");
     if (array1.length !== array2.length){
         return false;
     }
     for (var i=0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
-            $('.container').html('<div id="error-message" class="mx-auto"><h1 class="text-center">Sorry! You lose!</h1><div class="text-center"><button type="button" class="btn btn-warning" id="play-again">Play Again?</button></div></div>');
+         $('#center').html("<h1>Wrong</h1>");
+        } else
+        if ((i == (array1.length -1)) && (array1[i] === array2[i])) {
+            playerSequence = [];
+            clickCounter = 0;
+            setTimeout(function () {
+                gamePlay()
+            }, 800);
         }
     }
-    playerSequence = [];
-    clickCounter = 0;
-    setTimeout(function () {
-        gamePlay()
-    }, 800);
 }
 
 $('#play-again').click(function(){
@@ -95,28 +97,28 @@ $(greenButton).click(function () {
     console.log("you clicked the green button");
     animateColor(greenButton);
     playerSequence.push(1);
-    console.log(playerSequence);
+    console.log("player sequence: " + playerSequence);
 });
 
 $(redButton).click(function () {
     console.log("you clicked the red button");
     animateColor(redButton);
     playerSequence.push(2);
-    console.log(playerSequence);
+    console.log("player sequence: " + playerSequence);
 });
 
 $(yelButton).click(function () {
     console.log("you clicked the yellow button");
     animateColor(yelButton);
     playerSequence.push(3);
-    console.log(playerSequence);
+    console.log("player sequence: " + playerSequence);
 });
 
 $(blueButton).click(function () {
     console.log("you clicked the blue button");
     animateColor(blueButton);
     playerSequence.push(4);
-    console.log(playerSequence);
+    console.log("player sequence: " + playerSequence);
 });
 
 
