@@ -30,27 +30,21 @@ button {
     height: 212px;
     width: 212px;
 }
-#green {
+#btn-green {
     background-color: green;
-    opacity: 0.5;
-
 }
-#red {
+#btn-red {
     left: 238px;
     background-color: red;
-    opacity: 0.5;
 }
-#yellow {
+#btn-yellow {
     top: 238px;
     background-color: yellow;
-    opacity: 0.5;
 }
-#blue {
+#btn-blue {
     top: 238px;
     left: 238px;
     background-color: blue;
-    opacity: 0.5;
-
 }
 #center-border {
     z-index: 1;
@@ -70,6 +64,18 @@ button {
     height: 190px;
     background-color: rgb(224, 224, 224);
     border-radius: 50%;
+    text-align: center;
+}
+#throne-display {
+    padding: 0px 6px;
+    display: inline-block;
+    background-color: #5C0000;
+    vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 6px;
+    font-size: 36px;
+    width: 36px;
+    height: 42px;
     text-align: center;
 }
 .btn-wrapper {

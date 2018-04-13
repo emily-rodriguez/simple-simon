@@ -10,24 +10,52 @@
 
 <h1>Simple Simon</h1>
 
-<div class="container">
-        <div class="col green-piece">
-            <div id="green" class="game-button"></div>
+<div id="alert"></div>
+
+<div id="container">
+    <div id="btn-container">
+        <div id="center-border">
+            <div id="center">
+                <h1>Simon</h1>
+                <div class="text-center">
+                    <button type="button" id="start-game" class="btn btn-success">Start New Game</button>
+                </div>
+                <!--<div id="throne-display"></div>-->
+                <!--<div class="btn-wrapper">-->
+                    <!--<div id="throne-start">-->
+                        <!--<button type="button" id="btn-start"></button>-->
+                    <!--</div>-->
+                    <!--<br><h2>start</h2>-->
+                <!--</div>-->
+                <!--<div class="btn-wrapper">-->
+                    <!--<div id="throne-light">-->
+                        <!--<div id="light"></div>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div id="throne-strict">-->
+                        <!--<button type="button" id="btn-strict"></button>-->
+                    <!--</div>-->
+                    <!--<br><h2>strict</h2>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="btn-wrapper">-->
+                    <!--<h2>off</h2>-->
+                    <!--<div id="throne-on">-->
+                        <!--<button type="button" id="btn-on"><div></div><div></div></button>-->
+                    <!--</div>-->
+                    <!--</button><h2>on</h2>-->
+                <!--</div>-->
+            </div>
         </div>
-        <div class="col red-piece">
-            <div id="red" class="game-button"></div>
-        </div>
-        <div class="col yellow-piece">
-            <div id="yellow" class="game-button"></div>
-        </div>
-        <div class="col">
-            <div id="blue" class="game-button"></div>
-        </div>
+        <button type="button" id="green" class="btn-surround"></button>
+        <button type="button" id="red" class="btn-surround"></button>
+        <button type="button" id="yellow" class="btn-surround"></button>
+        <button type="button" id="blue" class="btn-surround"></button>
+    </div>
 </div>
 
-<div class="text-center">
-<button type="button" id="start-game" class="btn btn-success">Start New Game</button>
-</div>
+
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
