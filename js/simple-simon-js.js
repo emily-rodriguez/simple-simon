@@ -81,7 +81,7 @@ function matchArrays(array1, array2) {
     for (var i=0; i < array1.length; i++) {
         if (array1[i] !== array2[i]) {
             clickCounter = 0;
-             $('#center').html("<h3 id='gameOver'>Wrong</h3>");
+             $('#center').html("<h3 id='gameOver'>game over</h3>");
         } else
         if ((i == (array1.length -1)) && (array1[i] === array2[i])) {
             playerSequence = [];
